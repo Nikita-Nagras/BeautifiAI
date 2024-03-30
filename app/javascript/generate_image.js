@@ -1,3 +1,4 @@
+console.log("works")
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('generate_image').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent default form submission
