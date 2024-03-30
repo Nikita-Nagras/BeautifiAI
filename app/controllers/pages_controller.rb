@@ -1,37 +1,36 @@
 class PagesController < ApplicationController
 
 
-  # def api_request
-  #   api_key = ENV['API_KEY']
-  #   url = 'https://api.stability.ai/v1/generation/stable-diffusion-xl-1024-v1-0/image-to-image'
+require "base64"
 
-  #   response = HTTParty.post(url, {
-  #     headers: {
-  #       'Content-Type' => 'multipart/form-data; boundary=<calculated when request is sent>',
-  #       'Content-Length' => '<calculated when request is sent>',
-  #       'Host' => '<calculated when request is sent>',
-  #       'User-Agent' => 'PostmanRuntime/7.37.0',
-  #       'Accept' => '*/*',
-  #       'Accept-Encoding' => 'gzip, deflate, br',
-  #       'Connection' => 'keep-alive',
-  #       'Authorization' => "Bearer #{api_key}"
-  #     },
-  #     body: {
-  #       init_image: 'value1',
-  #       init_image_mode: 'IMAGE_STRENGTH',
-  #       image_strength: '0.35',
-  #       text_prompts[0][text]: 'send help',
-  #       cfg_scale: '7',
-  #       samples: '1',
-  #       steps: '30'
-  #     }.to_json
-  #   })
+class PagesController < ApplicationController
+  def index
+  end
 
-  #   if response.code == 200
-  #     render json: JSON.parse(response.body), status: :ok
-  #   else
-  #     render json: { error: "API request failed: #{response.code} - #{response.message}" }, status: :unprocessable_entity
-  #   end
-  # end
+  def api_request
+    api_key = ENV['PEBBLELY_API_KEY']
+    url = 'https://fashion-api.pebblely.com/api_v1/generate/virtual_pose'
+
+    data = File.open('/home/gabriel/redcoat.png').read
+    response = HTTParty.post(url, {
+      headers: {
+        'Content-Type' => 'application/json',
+        'Accept' => '*/*',
+        'X-Pebblely-Access-Token' => "#{api_key}"
+      },
+      body: {
+        cloth_image: Base64.encode64(data),
+        theme: "Streets",
+        prompt: "Blue hair Japanese female model",
+      }.to_json
+    })
+
+    if response.code == 200
+      render json: JSON.parse(response.body), status: :ok
+    else
+      render json: { error: "API request failed: #{response.code} - #{response.message} #{response.body}" }, status: :unprocessable_entity
+    end
+  end
+end
 
 end
