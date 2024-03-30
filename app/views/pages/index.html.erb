@@ -36,7 +36,7 @@
     />
   </div>
   <div class="border-t pt-6">
-    <form class="flex flex-col items-center space-y-4">
+    <form class="flex flex-col items-center space-y-4" id="form">
       <div class="flex space-x-4">
         <%= form_tag({action: 'upload_image'}, multipart: true) do %>
           <%= label_tag :image, 'Upload Image' %>
@@ -75,6 +75,7 @@
     </form>
   </div>
   <div id="result" class="h-10">
+    <img src>
   </div>
 </div>
 
