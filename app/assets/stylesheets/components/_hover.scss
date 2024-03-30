@@ -1,0 +1,9 @@
+.img1 {
+  background: url('/assets/20240216_110311.jpg');
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.img1:hover {
+  background: url('/assets/20240216_151755.jpg');
+}
