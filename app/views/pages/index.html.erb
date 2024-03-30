@@ -1,7 +1,99 @@
-<div class="container">
-  <h1 class="text-center mb-4">BeautifAI</h1>
 
+<!--
+// v0 by Vercel.
+// https://v0.dev/t/HnwRY1vKAe1
+-->
+
+<div class="max-w-4xl mx-auto my-10 p-6 bg-white shadow-lg rounded-lg">
+  <header class="mb-6 text-center">
+    <h1 class="text-4xl font-bold text-gray-800">BeautifAI</h1>
+    <p class="text-xl text-gray-600 mt-2">Clothe yourself, peasant!</p>
+  </header>
+  <div class="grid grid-cols-3 gap-4 mb-6">
+    <img
+      src="/placeholder.svg"
+      alt="Placeholder Image"
+      class="w-full h-auto bg-gray-200 rounded-md"
+      width="300"
+      height="200"
+      style="aspect-ratio: 300 / 200; object-fit: cover;"
+    />
+    <img
+      src="/placeholder.svg"
+      alt="Placeholder Image"
+      class="w-full h-auto bg-gray-200 rounded-md"
+      width="300"
+      height="200"
+      style="aspect-ratio: 300 / 200; object-fit: cover;"
+    />
+    <img
+      src="/placeholder.svg"
+      alt="Placeholder Image"
+      class="w-full h-auto bg-gray-200 rounded-md"
+      width="300"
+      height="200"
+      style="aspect-ratio: 300 / 200; object-fit: cover;"
+    />
+  </div>
+  <div class="border-t pt-6">
+    <form class="flex flex-col items-center space-y-4">
+      <div class="flex space-x-4">
+        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+          Upload
+        </button>
+        <button
+          type="button"
+          role="checkbox"
+          aria-checked="false"
+          data-state="unchecked"
+          value="on"
+          class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+          id="style"
+        ></button>
+        <input
+          aria-hidden="true"
+          tabindex="-1"
+          type="checkbox"
+          value="on"
+          style="transform: translateX(-100%); position: absolute; pointer-events: none; opacity: 0; margin: 0px; width: 16px; height: 16px;"
+        />
+        <label for="style" class="text-sm font-medium leading-none">
+          Style
+        </label>
+      </div>
+      <input
+        class="flex h-10 border-input bg-background text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full px-4 py-2 border rounded-md"
+        placeholder="Your prompt"
+        type="text"
+      />
+      <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+        Generate
+      </button>
+    </form>
+  </div>
+</div>
+
+
+<%#
+<div>
+  <div class="banner">
+    <h1 class="text-center mb-4">BeautifAI</h1>
+  </div>
   <!-- Centered form -->
+  <div class="d-flex flex-column justify-content-center">
+    <p>Put the clothes on the person!</p>
+    <div class="d-flex flex-row">
+      <img src= "app/assets/images/20240216_110311.jpg" >
+      <img src= "app/assets/images/20240216_151755.jpg">
+      <img src= "app/assets/images/20240216_151820.jpg">
+    </div>
+  </div>
+
+
+
+
+
+
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="rounded p-4 bg-light">
@@ -11,18 +103,18 @@
             <label for="prompt" class="mb-2">Enter your prompt:</label>
             <input type="text" class="form-control mb-3" id="prompt" name="prompt" placeholder="E.g., 'A cat playing piano'">
           </div>
-
           <div class="d-grid gap-2">
             <!-- Generate Button -->
             <button id="generate_image" type="submit" class="btn btn-primary btn-block">Generate Image</button>
             <!-- Display area for generated image -->
             <div class="mt-4 text-center" id="generated-img">
               <!-- Image will be displayed here -->
-              <img src=<%= @result %> alt="Generated Image" class="img-fluid">
+              <%# <img src=<%= @result %>
+              <%# alt="Generated Image" class="img-fluid">
             </div>
           </div>
         </form>
       </div>
     </div>
   </div>
-</div>
+</div> %>
