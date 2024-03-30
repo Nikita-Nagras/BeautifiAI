@@ -1,3 +1,28 @@
-<h1>Send help</h1>
-<p></p>
-<p>Looka me I'm a page</p>
+<div class="container">
+  <h1 class="text-center mb-4">BeautifAI</h1>
+
+  <!-- Centered form -->
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="rounded p-4 bg-light">
+        <!-- Form for input prompt -->
+        <form id="generate-form">
+          <div class="form-group">
+            <label for="prompt" class="mb-2">Enter your prompt:</label>
+            <input type="text" class="form-control mb-3" id="prompt" name="prompt" placeholder="E.g., 'A cat playing piano'">
+          </div>
+
+          <div class="d-grid gap-2">
+            <!-- Generate Button -->
+            <button id="generate_image" type="submit" class="btn btn-primary btn-block">Generate Image</button>
+            <!-- Display area for generated image -->
+            <div class="mt-4 text-center" id="generated-img">
+              <!-- Image will be displayed here -->
+              <img src=<%= @result %> alt="Generated Image" class="img-fluid">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
