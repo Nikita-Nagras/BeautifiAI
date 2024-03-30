@@ -27,6 +27,14 @@ class PagesController < ApplicationController
   #   end
   # end
 
+  def upload_image
+    uploaded_io = params[:cloth_image]
+    File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+      file.write(uploaded_io.read)
+    end
+    # Redirect or render success message
+  end
+
   def generate
     if !params['cloth_image'].present? || !params['theme'].present? || !params['prompt'].present?
       redirect_to pages_path
