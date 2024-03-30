@@ -1,3 +1,5 @@
+require "base64"
+
 class PebblelyApi
 
   def initialize(api_key)
