@@ -32,8 +32,8 @@ class PagesController < ApplicationController
       redirect_to pages_path
     end
 
-    api_key = ENV['PEBBLELY_API_KEY']
-    client = PebblelyApi.new(api_key)
+    #api_key = ENV['PEBBLELY_API_KEY']
+    client = PebblelyApi.new("1bfbfc20-a085-40d1-9154-c26f297d0ca6")
     response = client.generate_image(cloth_image, theme, prompt)
     # use response here
   end
