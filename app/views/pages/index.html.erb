@@ -1,23 +1,22 @@
-
 <!--
 // v0 by Vercel.
 // https://v0.dev/t/HnwRY1vKAe1
 -->
-
 <div class="max-w-4xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
   <header class="mb-6 text-center">
     <h1 class="rounded-lg text-4xl h-20 font-bold bg-yellow-200 text-gray-800 text-justify flex justify-center items-center">BeautifAI</h1>
     <p class="text-xl text-gray-600 mt-2 text-center">Clothe yourself, peasant!</p>
   </header>
   <div class="grid grid-cols-3 gap-4 mb-6">
-    <img
-/
+    <div class="bg-[url(/assets/20240216_110311.jpg)] hover:bg-[url(/assets/20240216_151755.jpg)] bg-cover w-300 h-300"></div>
+    <%# <img
+      src="/assets/20240216_110311.jpg"
       alt="Placeholder Image"
       class="w-full h-auto bg-gray-200 rounded-md img1"
       width="300"
       height="200"
       style="aspect-ratio: 300 / 200; object-fit: cover;"
-    />
+    /> %>
     <img
       src="/assets/20240216_151755.jpg"
       alt="Placeholder Image"
@@ -38,21 +37,20 @@
   <div class="border-t pt-6">
     <form class="flex flex-col items-center space-y-4">
       <div class="flex space-x-4">
-        <%= form_tag({action: 'upload_image'}, multipart: true) do %>
-          <%= label_tag :image, 'Upload Image' %>
-          <%= file_field_tag :image %>
-
-          <%= submit_tag 'Upload', class: 'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2' %>
-        <% end %>
-        <button
-          type="button"
-          role="checkbox"
-          aria-checked="false"
-          data-state="unchecked"
-          value="on"
-          class="peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+          Upload
+        </button>
+        <select
           id="style"
-        ></button>
+          class="peer h-8 w-24 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          <option id="streetschoice" value="streets">Streets</option>
+          <option id="beachchoice" value="beach">Beach</option>
+          <option id="rooftopchoice" value="rooftop">Rooftop</option>
+          <option id="homechoice" value="home">Home</option>
+          <option id="parkchoice" value="park">Park</option>
+          <option id="cafechoice" value="cafe">Cafe</option>
+        </select>
         <input
           aria-hidden="true"
           tabindex="-1"
@@ -69,7 +67,7 @@
         placeholder="Your prompt"
         type="text"
       />
-      <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2" id="generate_image">
+      <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2" id="generate-image">
         Generate
       </button>
     </form>
@@ -116,10 +114,11 @@
               <!-- Image will be displayed here -->
               <%# <img src=<%= @result %>
               <%# alt="Generated Image" class="img-fluid">
-            </div>
-          </div>
-        </form>
-      </div>
     </div>
   </div>
-</div> %>
+</form>
+</div>
+</div>
+</div>
+</div>
+ %>
