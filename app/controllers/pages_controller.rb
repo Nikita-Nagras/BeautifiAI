@@ -34,7 +34,7 @@ class PagesController < ApplicationController
 
     api_key = ENV['PEBBLELY_API_KEY']
     client = PebblelyApi.new(api_key)
-    response = client.api_request
+    response = client.generate_image(cloth_image, theme, prompt)
     # use response here
   end
 end
