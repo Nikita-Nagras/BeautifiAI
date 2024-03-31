@@ -2,13 +2,63 @@
 // v0 by Vercel.
 // https://v0.dev/t/HnwRY1vKAe1
 -->
-<div class="max-w-4xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
-  <header class="mb-6 text-center">
-    <h1 class="rounded-lg text-4xl h-20 font-bold bg-yellow-200 text-gray-800 text-justify flex justify-center items-center">BeautifAI</h1>
-    <p class="text-xl text-gray-600 mt-2 text-center">Clothe yourself, peasant!</p>
-  </header>
-  <div class="grid grid-cols-3 gap-4 mb-6">
-    <div class="bg-[url(/assets/20240216_110311.jpg)] hover:bg-[url(/assets/20240216_151755.jpg)] bg-cover w-300 h-300"></div>
+<div class="max-w-4xl mx-auto mt-10 p-6 bg-orange-50 shadow-lg rounded-lg m-8" style="padding-bottom: 550px;">
+  <%# <header class="mb-6 flex flex-col justify-items-center">
+    <h1 class="rounded-lg text-4xl h-20 font-bold bg-yellow-200 text-gray-900 text-justify flex justify-center items-center">BeautifAI</h1>
+
+    <%# <h1 class="rounded-lg text-4xl h-20 font-bold bg-yellow text-dkgrey text-justify flex justify-center items-center">BeautifAI</h1> %>
+    <%# <p class="text-xl typing text-gray-900 w-0 mt-2 text-center">Peasants, clothe yourselves</p> %>
+  <%# </header> %>
+
+<%# <nav class="mainNav">
+   <div class="mainNav__logo">Logo</div>
+   <div class="mainNav__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+         <g data-name="Layer 2" fill="#9197AE">
+            <g data-name="menu-2">
+               <rect
+                  width="24"
+                  height="24"
+                  transform="rotate(180 12 12)"
+                  opacity="0"
+               />
+               <circle cx="4" cy="12" r="1" />
+               <rect x="7" y="11" width="14" height="2" rx=".94" ry=".94" />
+               <rect x="3" y="16" width="18" height="2" rx=".94" ry=".94" />
+               <rect x="3" y="6" width="18" height="2" rx=".94" ry=".94" />
+            </g>
+         </g>
+      </svg>
+   </div>
+</nav> %>
+<header class="mainHeading">
+   <div class="mainHeading__content">
+      <article class="mainHeading__text">
+         <%# <p class="mainHeading__preTitle">Image solution</p> %>
+         <h2 class="mainHeading__title title-font">BeautifAI</h2>
+         <p class="mainHeading__description typing">
+            Common folk, come hither! Drape yourselves in finery, <br>
+            for the machines have come to relieve you of your labour!
+         </p>
+         <button class="cta">Get started</button>
+      </article>
+
+      <figure class="mainHeading__image">
+         <img
+            src="/assets/tank--1024x1024.jpg"
+            alt=""
+         />
+      </figure>
+   </div>
+</header>
+
+
+  <div class="flex flex-col">
+  <div class="grid grid-cols-3 gap-2 mb-64">
+    <div class="relative h-300 drop-shadow-lg">
+      <div class="absolute inset-0 bg-[url(/assets/acnh_shirt.jpeg)] bg-center bg-no-repeat bg-cover transition-[opacity_.5s,scale_.5s] duration-500 hover:opacity-0 img1"></div>
+      <div class="absolute inset-0 bg-[url(/assets/acnh_shirt_generated.jpg)] bg-center bg-no-repeat bg-cover transition-[opacity_.5s,scale_.5s] duration-500 opacity-0 hover:opacity-100 hover:scale-105 img1"></div>
+    </div>
     <%# <img
       src="/assets/20240216_110311.jpg"
       alt="Placeholder Image"
@@ -17,31 +67,39 @@
       height="200"
       style="aspect-ratio: 300 / 200; object-fit: cover;"
     /> %>
-    <img
+    <div class="relative h-300 drop-shadow-lg">
+      <div class="absolute inset-0 bg-[url(/assets/girls_who_code.jpg)] bg-center bg-no-repeat bg-cover transition-[opacity_.5s,scale_.5s] duration-500 hover:opacity-0 img1"></div>
+      <div class="absolute inset-0 bg-[url(/assets/girls_who_code_generated.jpg)] bg-center bg-no-repeat bg-cover transition-[opacity_.5s,scale_.5s] duration-500 opacity-0 hover:opacity-100 hover:scale-105 img1"></div>
+    </div>
+    <%# <img
       src="/assets/20240216_151755.jpg"
       alt="Placeholder Image"
       class="w-full h-auto bg-gray-200 rounded-md"
       width="300"
       height="200"
       style="aspect-ratio: 300 / 200; object-fit: cover;"
-    />
-    <img
+    /> %>
+    <div class="relative h-300 drop-shadow-lg">
+      <div class="absolute inset-0 bg-[url(/assets/tie_dye.jpg)] bg-center bg-no-repeat bg-cover transition-[opacity_.5s,scale_.5s] duration-500 hover:opacity-0 img1"></div>
+      <div class="absolute inset-0 bg-[url(/assets/tie_dye_generated.jpg)] bg-center bg-no-repeat bg-cover transition-[opacity_.5s,scale_.5s] duration-500 opacity-0 hover:opacity-100 hover:scale-105 img1"></div>
+    </div>
+    <%# <img
       src="/assets/20240216_151820.jpg"
       alt="Placeholder Image"
       class="w-full h-auto bg-gray-200 rounded-md"
       width="300"
       height="200"
       style="aspect-ratio: 300 / 200; object-fit: cover;"
-    />
+    /> %>
   </div>
   <div class="border-t pt-6">
-    <form class="flex flex-col items-center space-y-4" id="form">
-      <div class="flex space-x-4">
-        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload file</label>
-        <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="cloth_image" type="file">
+    <form class="flex flex-col items-center space-y-4">
+      <div class="flex ">
+        <%# <label class="block text-sm font-medium text-gray-900 dark:text-white mr-1" for="file_input">4e4</label> %>
+        <input class="block form-button mr-2 text-sm text-gray-900 border border-gray-300 mt-0 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="cloth_image" type="file">
         <select
           id="style"
-          class="peer h-8 w-24 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          class="peer w-24 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 h-6 "
         >
           <option id="streetschoice" value="streets">Streets</option>
           <option id="beachchoice" value="beach">Beach</option>
@@ -57,26 +115,26 @@
           value="on"
           style="transform: translateX(-100%); position: absolute; pointer-events: none; opacity: 0; margin: 0px; width: 16px; height: 16px;"
         />
-        <label for="style" class="text-sm font-medium leading-none">
-          Style
-        </label>
+
       </div>
-      <input
-        id="prompt"
-        class="flex h-10 border-input bg-background text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full px-4 py-2 border rounded-md"
+      <textarea
+        id = "prompt"
+        class="flex h-10 border-input bg-background text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 px-4 py-2 h-24 w-96 border rounded-md"
         placeholder="Your prompt"
         type="text"
-      />
-      <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2" id="generate-image">
+      ></textarea>
+      <button class="cta-2 bg-orange-300 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2" id="generate-image">
         Generate
       </button>
+      <div id="result" class="h-80">
+        
+      </div>
     </form>
+
   </div>
-  <div id="result" class="h-10">
-    <img src>
+
   </div>
 </div>
-
 
 <%#
 <div>

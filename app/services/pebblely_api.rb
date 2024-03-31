@@ -7,8 +7,8 @@ class PebblelyApi
   end
 
   def generate_image(cloth_image, theme, prompt)
+    puts "calling generate image"
     url = 'https://fashion-api.pebblely.com/api_v1/generate/virtual_pose'
-    data = File.open(cloth_image).read
     response = HTTParty.post(url, {
       headers: {
         'Content-Type' => 'application/json',
@@ -16,7 +16,7 @@ class PebblelyApi
         'X-Pebblely-Access-Token' => "#@api_key"
       },
       body: {
-        cloth_image: Base64.encode64(data),
+        cloth_image: cloth_image,
         theme: theme,
         prompt: prompt,
       }.to_json
@@ -24,8 +24,12 @@ class PebblelyApi
 
     if response.code == 200
       return response.body
+    else
+      puts "pebblely error"
+      puts response.code
+      puts response.body
     end
   end
 
-  
+
 end

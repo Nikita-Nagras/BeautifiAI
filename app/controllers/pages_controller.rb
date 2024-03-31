@@ -13,27 +13,21 @@ class PagesController < ApplicationController
 
   def generate
     puts "it reached controller"
-    puts params["style"]
-    puts params["prompt"]
-    puts params["cloth_image"]
 
-    cloth_image = params[:cloth_image].tempfile.read
-    # if !params['cloth_image'].present? || !params['theme'].present? || !params['prompt'].present?
-    #   redirect_to pages_path
-    # end
+    cloth_image = params[:cloth_image].tempfile
 
    api_key = ENV['PEBBLELY_API_KEY']
-   stability_api_key = ENV['STABILITY_API_KEY']
-   client2 = StabilityAPI.new(stability_api_key)
-   altered_image = client2.remove_background(cloth_image)
-
    client = PebblelyApi.new(api_key)
+   stability_api_key = ENV['STABILITY_API_KEY']
+   client2 = StabilityApi.new(stability_api_key)
+
+   no_background = client2.remove_background(cloth_image)
+
    response = client.generate_image(
-     params['cloth_image'],
+     no_background,
      params['style'],
      params['prompt']
    )
     render json: response, status: :ok
-   puts response
   end
 end
