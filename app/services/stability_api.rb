@@ -3,26 +3,20 @@ class StabilityAPI
     @stability_api_key = stability_api_key
   end
 
-  def remove_background
+  def remove_background(cloth_image)
     url = 'https://api.stability.ai/v2beta/stable-image/edit/remove-background'
-
-    data = File.open(cloth_image).read
     response = HTTParty.post(url, {
       headers: {
-        "authorization": "#{stability_api_key}",
-        "accept": "image/*"
+        'Content-Type' => 'multipart/form-data',
+        'Accept' => 'application/json',
+        'Authorization' => "#@stability_api_key"
       },
-      files={
-        "image": open("./husky-in-a-field.png", "rb")
-    },
-    data={
-        "output_format": "webp"
-    },
-})
+      body: {
+        cloth_image: Base64.encode64(data),
+      }.to_json
+    })
 
-    if response.status_code == 200:
-        with open("./husky.webp", 'wb') as file:
-          file.write(response.content)
-    else:
-      raise Exception(str(response.json()))
+    if response.code == 200
+      return response.body
+    end
 end
