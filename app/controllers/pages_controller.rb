@@ -23,6 +23,10 @@ class PagesController < ApplicationController
     # end
 
    api_key = ENV['PEBBLELY_API_KEY']
+   stability_api_key = ENV['STABILITY_API_KEY']
+   client2 = StabilityAPI.new(stability_api_key)
+   altered_image = client2.remove_background(cloth_image)
+
    client = PebblelyApi.new(api_key)
    response = client.generate_image(
      params['cloth_image'],

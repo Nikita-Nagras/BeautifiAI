@@ -1,3 +1,5 @@
+require "base64"
+
 class PebblelyApi
 
   def initialize(api_key)
@@ -24,4 +26,6 @@ class PebblelyApi
       return response.body
     end
   end
+
+  
 end
