@@ -2,7 +2,7 @@
 // v0 by Vercel.
 // https://v0.dev/t/HnwRY1vKAe1
 -->
-<div class="max-w-4xl mx-auto mt-10 p-6 bg-orange-50 shadow-lg rounded-lg m-8">
+<div class="max-w-4xl mx-auto mt-10 p-6 bg-orange-50 shadow-lg rounded-lg m-8" style="padding-bottom: 550px;">
   <%# <header class="mb-6 flex flex-col justify-items-center">
     <h1 class="rounded-lg text-4xl h-20 font-bold bg-yellow-200 text-gray-900 text-justify flex justify-center items-center">BeautifAI</h1>
 
@@ -96,10 +96,10 @@
     <form class="flex flex-col items-center space-y-4">
       <div class="flex ">
         <%# <label class="block text-sm font-medium text-gray-900 dark:text-white mr-1" for="file_input">4e4</label> %>
-        <input class="block cta-2 mr-2 text-sm text-gray-900 border border-gray-300 mt-0 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="cloth_image" type="file">
+        <input class="block form-button mr-2 text-sm text-gray-900 border border-gray-300 mt-0 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="cloth_image" type="file">
         <select
           id="style"
-          class="peer w-24 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 h-8 "
+          class="peer w-24 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 h-6 "
         >
           <option id="streetschoice" value="streets">Streets</option>
           <option id="beachchoice" value="beach">Beach</option>
@@ -126,10 +126,13 @@
       <button class="cta-2 bg-orange-300 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2" id="generate-image">
         Generate
       </button>
+      <div id="result" class="h-80">
+        
+      </div>
     </form>
+
   </div>
-  <div id="result" class="h-80">
-  </div>
+
   </div>
 </div>
 
